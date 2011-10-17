@@ -411,7 +411,7 @@ public class NetUtils {
    * @return its IP address in the string format
    */
   public static String normalizeHostName(String name) {
-    if (Character.digit(name.charAt(0), 10) != -1) { // it is an IP
+    if (Character.digit(name.charAt(0), 10) != -1) { // it is an IP, if someone set hostname = 0node; this doesn't work.
       return name;
     } else {
       try {
